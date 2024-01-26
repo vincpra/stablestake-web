@@ -1,0 +1,51 @@
+{
+  "name": "stablestake",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider --max_old_space_size=4096' next dev",
+    "build": "yarn clear && yarn typechain && cross-env NODE_OPTIONS='--openssl-legacy-provider --max_old_space_size=4096' next build && cross-env NODE_OPTIONS='--openssl-legacy-provider --max_old_space_size=4096' next export",
+    "start": "cross-env NODE_OPTIONS='--openssl-legacy-provider --max_old_space_size=4096' next start",
+    "lint": "yarn prettier ./src/**/*.{js,ts,jsx,tsx} --check",
+    "lint:fix": "yarn prettier ./src/**/*.{js,ts,jsx,tsx} --write",
+    "clear": "rimraf out",
+    "typechain": "typechain --target web3-v1 --out-dir src/typechain 'src/abi/**/*.json'"
+  },
+  "dependencies": {
+    "big.js": "^6.1.1",
+    "classnames": "^2.3.1",
+    "cross-env": "^7.0.3",
+    "imagemin-mozjpeg": "^9.0.0",
+    "moment": "^2.29.1",
+    "next": "11.0.1",
+    "next-optimized-images": "^2.6.2",
+    "react": "17.0.2",
+    "react-aria-modal": "^4.0.1",
+    "react-bootstrap": "^2.5.0",
+    "react-copy-to-clipboard": "^5.0.4",
+    "react-dom": "17.0.2",
+    "react-facebook-pixel": "^1.0.4",
+    "react-icons": "^4.3.1",
+    "react-router": "^6.2.1",
+    "react-toastify": "^8.1.0",
+    "react-twitter-embed": "^4.0.4",
+    "web3": "^1.5.2"
+  },
+  "devDependencies": {
+    "@typechain/web3-v1": "^4.0.0",
+    "@types/big.js": "^6.1.2",
+    "@types/react": "17.0.13",
+    "@types/react-aria-modal": "^4.0.6",
+    "@types/react-copy-to-clipboard": "^5.0.2",
+    "autoprefixer": "^10.2.6",
+    "eslint": "7.30.0",
+    "eslint-config-next": "11.0.1",
+    "postcss": "^8.3.5",
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^2.2.4",
+    "typechain": "^6.1.0",
+    "typescript": "4.3.5",
+    "web3-utils": "^1.5.2"
+  }
+}
